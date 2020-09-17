@@ -1,0 +1,26 @@
+html,
+body,
+#___gatsby {
+  height: 100%;
+}
+
+body {
+  margin: 0px;
+}
+
+/* 
+div[role="group"][tabindex] {
+  height: 100%;
+} */
+
+#gatsby-focus-wrapper {
+  height: 100vh;
+}
+
+.flexbox.container {
+  display: flex;
+  flex-direction: column;
+}
+.flexbox.container .down {
+  flex-grow: 1;
+}
