@@ -53,7 +53,7 @@ const GenerateSkillCard = props => {
   const listGroupClass = readOffProps(props.listGroup, "list-group")
   const listItemClass = readOffProps(
     props.listItemClass,
-    "list-group-item d-flex justify-content-between align-items-center"
+    "list-group-item d-flex justify-content-between align-items-center super-dark-background"
   )
   const listBadgeClass = readOffProps(
     props.listBadgeClass,
@@ -61,10 +61,10 @@ const GenerateSkillCard = props => {
   )
 
   return (
-    <Card>
+    <Card className="dark-background">
       <Card.Header>
         <Accordion.Toggle
-          className="aqua-gradient"
+          className="skill-button"
           as={Button}
           eventKey={eventKey}
         >

@@ -2,10 +2,11 @@
 $enable-gradients: true // Bootstrap and its default variables
 @import "node_modules/bootstrap/scss/bootstrap"
 
+$calvin-super-dark-blue: #070063
 $calvin-dark-blue: #00259e
 $calvin-darkish-blue: #2013d6
 $calvin-blue: #2246e6
-$calvin-lightish-blue: #94c9ff
+$calvin-lightish-blue: #4b88f2
 $calvin-light-blue: #baeaff
 $calvin-cyan: #2ad5de
 
@@ -19,12 +20,26 @@ $calvin-cyan: #2ad5de
 .menu-selcted
     background: linear-gradient($calvin-blue, $calvin-lightish-blue, $calvin-blue)
     color: black
+.menu-not-selcted:hover
+    background: linear-gradient($calvin-blue, $calvin-dark-blue, $calvin-blue)
+
+.skill-button
+    background: linear-gradient($calvin-dark-blue, $calvin-super-dark-blue, $calvin-dark-blue)
+    border-style: none
+.skill-button:hover
+    background: $calvin-super-dark-blue
+
+.skill-button:active
+    background: $calvin-super-dark-blue
 
 .primary-background
     background: $calvin-darkish-blue
 
 .dark-background
     background: $calvin-dark-blue
+.super-dark-background
+    background: $calvin-super-dark-blue
+    color: white
 
 html,body, #___gatsby 
     height: 100%
@@ -45,3 +60,8 @@ div[role="group"][tabindex]
 
 .flexbox.container .down 
     flex-grow: 1
+
+.nobuffer 
+    margin: 0px
+    border: 0px
+    padding: 0px
