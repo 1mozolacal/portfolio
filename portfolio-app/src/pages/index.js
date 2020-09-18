@@ -5,7 +5,8 @@ import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
 
-import "bootstrap/dist/css/bootstrap.min.css"
+//import "bootstrap/dist/css/bootstrap.min.css"
+import "../components/custom.sass"
 import "../components/global.css"
 
 const IndexPage = () => (
@@ -19,6 +20,9 @@ const IndexPage = () => (
     </div>
     <Link to="/page-2/">Go to page 2</Link> <br />
     <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
+    <button style={{ gradient: "aqua" }} class="btn aqua-gradient calvin-aqua">
+      Aqua
+    </button>
   </Layout>
 )
 

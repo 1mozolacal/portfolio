@@ -1,0 +1,47 @@
+// Your variable overrides
+$enable-gradients: true // Bootstrap and its default variables
+@import "node_modules/bootstrap/scss/bootstrap"
+
+$calvin-dark-blue: #00259e
+$calvin-darkish-blue: #2013d6
+$calvin-blue: #2246e6
+$calvin-lightish-blue: #94c9ff
+$calvin-light-blue: #baeaff
+$calvin-cyan: #2ad5de
+
+.calvin-aqua 
+    background: linear-gradient(lightblue, blue)
+
+.menu-not-selcted
+    background: $calvin-blue
+    color: white
+
+.menu-selcted
+    background: linear-gradient($calvin-blue, $calvin-lightish-blue, $calvin-blue)
+    color: black
+
+.primary-background
+    background: $calvin-darkish-blue
+
+.dark-background
+    background: $calvin-dark-blue
+
+html,body, #___gatsby 
+    height: 100%
+
+body 
+    margin: 0px
+
+div[role="group"][tabindex] 
+    height: 100%
+
+#gatsby-focus-wrapper 
+    height: 100vh
+
+
+.flexbox.container 
+    display: flex
+    flex-direction: column
+
+.flexbox.container .down 
+    flex-grow: 1

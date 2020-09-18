@@ -5,26 +5,40 @@ import Styling from "./componentStyles.module.css"
 //import PropTypes from "prop-types"
 
 const NavBar = () => (
-  <div>
+  <div className={Styling.hidescroll} style={{ maxHeight: "100vh" }}>
     <LinkNavBar></LinkNavBar>
     <AccordionSkills style={{ margin: "15px" }}></AccordionSkills>
   </div>
 )
 
-const LinkNavBar = () => {
+const LinkNavBar = props => {
+  var selection = readOffProps(props.select, "Projects")
+  var listItemClass = [
+    "list-group-item menu-not-selcted " + Styling.nobuffer,
+    "list-group-item menu-not-selcted " + Styling.nobuffer,
+    "list-group-item menu-not-selcted " + Styling.nobuffer,
+    "list-group-item menu-not-selcted " + Styling.nobuffer,
+    "list-group-item menu-not-selcted " + Styling.nobuffer,
+  ]
+  var selectedFormate = "list-group-item menu-selcted " + Styling.nobuffer
+  switch (selection) {
+    case "Home":
+      listItemClass[0] = selectedFormate
+      break
+    case "Projects":
+      listItemClass[1] = selectedFormate
+      break
+    case "Passed Work":
+      listItemClass[2] = selectedFormate
+      break
+  }
   return (
-    <ul class={"list-group list-group-flush " + Styling.nobuffer}>
-      <li class={"list-group-item list-group-item-info  " + Styling.nobuffer}>
-        Cras justo odio
-      </li>
-      <li class={"list-group-item list-group-item-light " + Styling.nobuffer}>
-        Dapibus ac facilisis in
-      </li>
-      <li class="list-group-item list-group-item-info">Morbi leo risus</li>
-      <li class="list-group-item list-group-item-info">
-        Porta ac consectetur ac
-      </li>
-      <li class="list-group-item">Vestibulum at eros</li>
+    <ul className={"list-group list-group-flush " + Styling.nobuffer}>
+      <li className={listItemClass[0]}>Home</li>
+      <li className={listItemClass[1]}>Projects</li>
+      <li className={listItemClass[2]}>Privious work</li>
+      <li className={listItemClass[3]}>Extra curricular</li>
+      <li className={listItemClass[4]}>Something</li>
     </ul>
   )
 }
@@ -49,7 +63,11 @@ const GenerateSkillCard = props => {
   return (
     <Card>
       <Card.Header>
-        <Accordion.Toggle as={Button} eventKey={eventKey}>
+        <Accordion.Toggle
+          className="aqua-gradient"
+          as={Button}
+          eventKey={eventKey}
+        >
           {header}
         </Accordion.Toggle>
       </Card.Header>
@@ -58,9 +76,9 @@ const GenerateSkillCard = props => {
           <ul class={listGroupClass}>
             {Object.keys(items).map((key, index) => {
               return (
-                <li class={listItemClass}>
+                <li className={listItemClass}>
                   {key}
-                  <span class={listBadgeClass}>{items[key]}</span>
+                  <span className={listBadgeClass}>{items[key]}</span>
                 </li>
               )
             })}
