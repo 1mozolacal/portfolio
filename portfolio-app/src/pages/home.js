@@ -9,6 +9,4 @@ const homePage = () => (
   </div>
 )
 
-//const homeScreen = () => <div>stuff</div>
-
 export default homePage

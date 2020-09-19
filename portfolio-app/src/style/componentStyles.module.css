@@ -1,6 +1,6 @@
 .homepagebackground {
   /* The image used */
-  background-image: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(11).jpg");
+  background-image: url("../images/mountain.jpg");
 
   /* Half height */
   height: 100%;
@@ -9,6 +9,18 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.navbarbackground {
+  background-image: url("../images/green-bottom.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+}
+.navbarbackgroundOLD {
+  background: linear-gradient(blue, black);
+  height: 100%;
 }
 
 .nobuffer {

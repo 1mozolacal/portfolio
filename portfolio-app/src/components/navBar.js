@@ -1,11 +1,14 @@
 import React from "react"
 import { Card, Button } from "react-bootstrap"
 import Accordion from "react-bootstrap/Accordion"
-import Styling from "./componentStyles.module.css"
+import Styling from "../style/componentStyles.module.css"
 //import PropTypes from "prop-types"
 
 const NavBar = () => (
-  <div className={Styling.hidescroll} style={{ maxHeight: "100vh" }}>
+  <div
+    className={Styling.hidescroll + " " + Styling.navbarbackground}
+    style={{ maxHeight: "100vh" }}
+  >
     <LinkNavBar></LinkNavBar>
     <AccordionSkills style={{ margin: "15px" }}></AccordionSkills>
   </div>
@@ -111,25 +114,53 @@ const AccordionSkills = props => {
       <GenerateSkillCard
         header="Languages"
         items={{
-          Python: "0/10",
-          Java: "1/10",
-          JavaScript: "1/10",
-          LabVIEW: "1/10",
-          C: "1/10",
-          SQL: "1/10",
+          Python: "7/10",
+          Java: "5/10",
+          JavaScript: "3/10",
+          LabVIEW: "3/10",
+          C: "3/10",
+          SQL: "2/10",
+          "HTML/CSS": "",
         }}
       ></GenerateSkillCard>
       <GenerateSkillCard
         header="Frameworks"
-        items={{ calvin: "value", other: "1/10" }}
+        items={{ Django: "5/10", React: "3/10", Gatsby: "1/10" }}
       ></GenerateSkillCard>
       <GenerateSkillCard
+        header="Dev Ops tools"
+        items={{ Git: "8/10", Docker: "3/10", Agile: "1/10" }}
+      ></GenerateSkillCard>
+
+      <GenerateSkillCard
         header="Interests"
-        items={{ calvin: "value", other: "1/10" }}
+        items={{
+          Swimming: "",
+          "Rock climbing": "",
+          Drawing: "",
+          "Learning Languages": "",
+        }}
       ></GenerateSkillCard>
       <GenerateSkillCard
         header="Competitions"
-        items={{ calvin: "value", other: "1/10" }}
+        items={{
+          "Code to Win": "60-70 out of 1000+",
+          "Hack the North": "",
+          "Hack the Valley": "",
+          "Ontario skills - robotics and control systems": "gold",
+          "Halton skills - robotics and control systems": "gold",
+        }}
+      ></GenerateSkillCard>
+      <GenerateSkillCard
+        header="Concepts"
+        items={{
+          CCP: "5/10",
+          Robotics: "3/10",
+          "PID Conrollers": "1/10",
+          "Data Structures": "",
+          "Computer Vision": "",
+          Algorithms: "",
+        }}
       ></GenerateSkillCard>
     </Accordion>
   )
