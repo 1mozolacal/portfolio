@@ -4,18 +4,22 @@ import Accordion from "react-bootstrap/Accordion"
 import Styling from "../style/componentStyles.module.css"
 //import PropTypes from "prop-types"
 
-const NavBar = () => (
+const NavBar = props => (
   <div
     className={Styling.hidescroll + " " + Styling.navbarbackground}
     style={{ maxHeight: "100vh" }}
   >
-    <LinkNavBar></LinkNavBar>
+    <LinkNavBar
+      select={props.select}
+      linkHandler={props.linkHandler}
+    ></LinkNavBar>
     <AccordionSkills style={{ margin: "15px" }}></AccordionSkills>
   </div>
 )
 
 const LinkNavBar = props => {
-  var selection = readOffProps(props.select, "Projects")
+  var selection = readOffProps(props.select, "Home")
+  var handler = props.linkHandler
   var listItemClass = [
     "list-group-item menu-not-selcted " + Styling.nobuffer,
     "list-group-item menu-not-selcted " + Styling.nobuffer,
@@ -31,17 +35,33 @@ const LinkNavBar = props => {
     case "Projects":
       listItemClass[1] = selectedFormate
       break
-    case "Passed Work":
+    case "Previous Work":
       listItemClass[2] = selectedFormate
+      break
+    case "Extra Curricular":
+      listItemClass[3] = selectedFormate
       break
   }
   return (
     <ul className={"list-group list-group-flush " + Styling.nobuffer}>
-      <li className={listItemClass[0]}>Home</li>
-      <li className={listItemClass[1]}>Projects</li>
-      <li className={listItemClass[2]}>Privious work</li>
-      <li className={listItemClass[3]}>Extra curricular</li>
-      <li className={listItemClass[4]}>Something</li>
+      <li className={listItemClass[0]} onClick={() => handler("Home")}>
+        Home
+      </li>
+      <li className={listItemClass[1]} onClick={() => handler("Projects")}>
+        Projects
+      </li>
+      <li className={listItemClass[2]} onClick={() => handler("Previous Work")}>
+        Previous Work
+      </li>
+      <li
+        className={listItemClass[3]}
+        onClick={() => handler("Extra Curricular")}
+      >
+        Extra Curricular
+      </li>
+      <li className={listItemClass[4]} onClick={() => handler("Something")}>
+        Something
+      </li>
     </ul>
   )
 }
@@ -76,7 +96,7 @@ const GenerateSkillCard = props => {
       </Card.Header>
       <Accordion.Collapse eventKey={eventKey}>
         <Card.Body>
-          <ul class={listGroupClass}>
+          <ul className={listGroupClass}>
             {Object.keys(items).map((key, index) => {
               return (
                 <li className={listItemClass}>
