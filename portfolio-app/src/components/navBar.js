@@ -121,10 +121,6 @@ function readOffProps(readVal, defaultVal) {
 }
 
 const AccordionSkills = props => {
-  const listGroupClass = "list-group"
-  const listItemClass =
-    "list-group-item d-flex justify-content-between align-items-center"
-  const listBadgeClass = "badge badge-primary badge-pill"
   var style = ""
   if (props.style) {
     style = props.style
