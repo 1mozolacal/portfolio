@@ -5,10 +5,7 @@ import Styling from "../style/componentStyles.module.css"
 //import PropTypes from "prop-types"
 
 const NavBar = props => (
-  <div
-    className={Styling.hidescroll + " " + Styling.navbarbackground}
-    style={{ maxHeight: "100vh" }}
-  >
+  <div className={Styling.hidescroll + " " + Styling.navbarbackground}>
     <LinkNavBar
       select={props.select}
       linkHandler={props.linkHandler}

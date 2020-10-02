@@ -48,8 +48,9 @@ class HomePage extends React.Component {
             style={{ maxWidth: "100%" }}
           >
             <div
-              className={"nobuffer col-md-3 primary-background"}
-              style={{ maxHeight: "100%" }}
+              className={
+                styles.mobileshrink + " nobuffer col-md-3 primary-background"
+              }
             >
               <NavBar
                 select={this.state.linkSelected}
@@ -58,7 +59,9 @@ class HomePage extends React.Component {
             </div>
             <div
               className={
-                "nobuffer col-md-9 primary-background " + styles.fillpar
+                styles.mobileshrink +
+                " nobuffer col-md-9 primary-background " +
+                styles.fillpar
               }
             >
               <ContentWindow window={this.state.linkSelected}></ContentWindow>
