@@ -1,7 +1,7 @@
 import React from "react"
 import styling from "../style/componentStyles.module.css"
 
-const WorkWindow = () => (
+const ExperienceWindow = () => (
   <div className={styling.homepagebackground}>
     <div
       className="display-1 d-flex justify-content-center align-items-center"
@@ -21,4 +21,4 @@ const WorkWindow = () => (
   </div>
 )
 
-export default WorkWindow
+export default ExperienceWindow

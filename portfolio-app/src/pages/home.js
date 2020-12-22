@@ -23,11 +23,13 @@ class HomePage extends React.Component {
       case "Projects":
         linkSelected = "Projects"
         break
-      case "Previous Work":
-        linkSelected = "Previous Work"
+      case "Experience":
+        linkSelected = "Experience"
         break
       case "Extra Curricular":
         linkSelected = "Extra Curricular"
+        break
+      default:
         break
     } //end switch
     this.setState({ linkSelected: linkSelected })

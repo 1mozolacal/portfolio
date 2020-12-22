@@ -21,8 +21,6 @@ const LinkNavBar = props => {
     "list-group-item menu-not-selcted " + Styling.nobuffer,
     "list-group-item menu-not-selcted " + Styling.nobuffer,
     "list-group-item menu-not-selcted " + Styling.nobuffer,
-    "list-group-item menu-not-selcted " + Styling.nobuffer,
-    "list-group-item menu-not-selcted " + Styling.nobuffer,
   ]
   var selectedFormate = "list-group-item menu-selcted " + Styling.nobuffer
   switch (selection) {
@@ -32,11 +30,11 @@ const LinkNavBar = props => {
     case "Projects":
       listItemClass[1] = selectedFormate
       break
-    case "Previous Work":
+    case "Experience":
       listItemClass[2] = selectedFormate
       break
-    case "Extra Curricular":
-      listItemClass[3] = selectedFormate
+    default:
+      listItemClass[0] = selectedFormate
       break
   }
   return (
@@ -47,17 +45,8 @@ const LinkNavBar = props => {
       <li className={listItemClass[1]} onClick={() => handler("Projects")}>
         Projects
       </li>
-      <li className={listItemClass[2]} onClick={() => handler("Previous Work")}>
-        Previous Work
-      </li>
-      <li
-        className={listItemClass[3]}
-        onClick={() => handler("Extra Curricular")}
-      >
-        Extra Curricular
-      </li>
-      <li className={listItemClass[4]} onClick={() => handler("Something")}>
-        Something
+      <li className={listItemClass[2]} onClick={() => handler("Experience")}>
+        Experience
       </li>
     </ul>
   )
@@ -98,7 +87,12 @@ const GenerateSkillCard = props => {
               return (
                 <li className={listItemClass}>
                   {key}
-                  <span className={listBadgeClass}>{items[key]}</span>
+                  <span
+                    style={{ "white-space": "pre-wrap" }}
+                    className={listBadgeClass}
+                  >
+                    {items[key]}
+                  </span>
                 </li>
               )
             })}

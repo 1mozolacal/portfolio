@@ -1,7 +1,7 @@
 import React from "react"
 import HomeWindow from "./HomeWindow"
 import ProjectWindow from "./projectWindow"
-import WorkWindow from "./workWindow"
+import ExperienceWindow from "./experienceWindow"
 
 const ContentWindow = props => {
   const window = props.window
@@ -11,12 +11,11 @@ const ContentWindow = props => {
       return <HomeWindow></HomeWindow>
     case "Projects":
       return <ProjectWindow></ProjectWindow>
-    case "Previous Work":
-      return <WorkWindow></WorkWindow>
-    case "Extra Curricular":
-      break
+    case "Experience":
+      return <ExperienceWindow></ExperienceWindow>
+    default:
+      return <HomeWindow></HomeWindow>
   } //end switch
-  return <ProjectWindow></ProjectWindow>
 }
 
 export default ContentWindow

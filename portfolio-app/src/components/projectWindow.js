@@ -2,6 +2,11 @@ import React from "react"
 import Styling from "../style/componentStyles.module.css"
 import StylingProject from "../style/project.module.css"
 
+import { GitButton } from "./helperComponents.js"
+
+import catIcon from "../images/cat-look-up.jpg"
+// import gitIcon from "../images/git-icon.png"
+
 const ProjectWindow = () => (
   <div className={Styling.homepagebackground + " " + Styling.hidescroll}>
     <div
@@ -12,9 +17,27 @@ const ProjectWindow = () => (
         top: "10%",
       }}
     >
-      <AnimatedCard name="Card"></AnimatedCard>
-      <AnimatedCard name="Card2"></AnimatedCard>
-      <AnimatedCard></AnimatedCard>
+      <AnimatedCard
+        title="Calvin"
+        description="Stuff and stuff and muffStuffStuff nd more stuff"
+        name="Card"
+        git="yes"
+        link="more"
+        icon={catIcon}
+      ></AnimatedCard>
+      <AnimatedCard
+        name="Card2"
+        title="Calvin"
+        description="Stuff and stuff and muffStuffStuff nd more stuff"
+        link="more"
+        icon={catIcon}
+      ></AnimatedCard>
+      <AnimatedCard
+        title="Calvin"
+        description="Studdff and stuff and muffStuffStuff nd more stuff"
+        git="yes"
+        icon={catIcon}
+      ></AnimatedCard>
       <AnimatedCard></AnimatedCard>
       <AnimatedCard></AnimatedCard>
       <AnimatedCard></AnimatedCard>
@@ -25,7 +48,12 @@ const ProjectWindow = () => (
 
 class AnimatedCard extends React.Component {
   constructor(props) {
-    super()
+    super(props)
+    this.title = props.title
+    this.description = props.description
+    this.icon = props.icon
+    this.gitLink = props.git
+    this.readMoreLink = props.link
     this.handleMouse = this.handleMouse.bind(this)
     this.ele = React.createRef()
     this.perspective = "100em"
@@ -79,11 +107,59 @@ class AnimatedCard extends React.Component {
       <div
         onMouseMove={this.handleMouse}
         className={StylingProject.projectitem}
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-between",
+        }}
         id={this.id}
       >
-        Hello stuff Random testing is a black-box software testing technique
-        where programs are tested by generating random, independent inputs.
+        <div>
+          <h1 style={{ textAlign: "center" }}>{this.title}</h1>
+          {this.icon && (
+            <ProjectPictureButton link={this.icon}></ProjectPictureButton>
+          )}
+          {this.description}
+        </div>
+        <div className="btn-group" style={{ height: "10%" }}>
+          {this.gitLink && <GitButton link={this.gitLink}></GitButton>}
+          {this.readMoreLink && (
+            <MoreButton link={this.readMoreLink}></MoreButton>
+          )}
+        </div>
       </div>
+    )
+  }
+}
+
+class ProjectPictureButton extends React.Component {
+  constructor(props) {
+    super(props)
+    this.link = props.link
+  }
+  render() {
+    return (
+      <div>
+        <img
+          alt="Project Icon"
+          src={this.link}
+          style={{ width: "80%" }}
+          className="mx-auto d-block rounded-circle"
+        ></img>
+      </div>
+    )
+  }
+}
+class MoreButton extends React.Component {
+  constructor(props) {
+    super(props)
+    this.link = props.link
+  }
+  render() {
+    return (
+      <a className="btn btn-primary" style={{ width: "150%" }} href={this.link}>
+        See more
+      </a>
     )
   }
 }
