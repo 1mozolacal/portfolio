@@ -1,5 +1,5 @@
 import React from "react"
-import styling from "../style/componentStyles.module.css"
+import styling from "../style/componentStyles.module.sass"
 
 const ExperienceWindow = () => (
   <div className={styling.homepagebackground}>
@@ -15,7 +15,10 @@ const ExperienceWindow = () => (
     >
       <h1>
         <b style={{ frontSize: "200%" }}>Hello!</b>
-        <small className="w-25">This is my work window</small>
+        <small className="w-25">
+          Work in progress... check this out some other time see the cool
+          updates
+        </small>
       </h1>
     </div>
   </div>

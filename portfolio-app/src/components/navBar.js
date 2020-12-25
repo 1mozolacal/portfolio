@@ -1,7 +1,7 @@
 import React from "react"
 import { Card, Button } from "react-bootstrap"
 import Accordion from "react-bootstrap/Accordion"
-import Styling from "../style/componentStyles.module.css"
+import Styling from "../style/componentStyles.module.sass"
 //import PropTypes from "prop-types"
 
 const NavBar = props => (

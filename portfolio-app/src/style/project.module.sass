@@ -1,0 +1,39 @@
+@import "./colour"
+
+.flexcontainer
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-around
+
+.projectitem
+  width: 80vw
+  min-height: 50vh
+  // max-height: 75vh
+  background-color: $calvin-light-sec
+  transform-style: "preserve-3d"
+  margin: 2em
+  opacity: 0.65
+  box-shadow: inset 0px 0px 5em 10px rgba(0, 0, 0, 0.4)
+
+.summary-holder
+  margin: auto
+  width: 80%
+
+.see-more-button
+  width: 150%
+  background-color: $calvin-primary-lighter
+  &:hover
+    background-color: $calvin-primary-light
+
+/* FOR DESTOP */
+@media only screen and (min-width: 768px)
+  .projectitem
+    width: 30vw
+    max-width: 300px
+    // min-height: 30vw
+    max-height: 65vw
+    background-color: $calvin-light-pri
+    transform-style: "preserve-3d"
+    margin: 2em
+    opacity: 0.65
+    box-shadow: inset 0px 0px 5em 10px rgba(0, 0, 0, 0.4)

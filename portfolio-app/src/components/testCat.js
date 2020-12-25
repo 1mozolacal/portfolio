@@ -2,7 +2,7 @@ import React from "react"
 //import { Card } from "react-bootstrap"
 //import Button from "react-bootstrap/Button"
 //import PropTypes from "prop-types"
-import styling from "../style/componentStyles.module.css"
+import styling from "../style/componentStyles.module.sass"
 
 class OtherPage extends React.Component {
   constructor(props) {

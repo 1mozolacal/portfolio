@@ -1,5 +1,5 @@
 import React from "react"
-import styling from "../style/componentStyles.module.css"
+import styling from "../style/componentStyles.module.sass"
 
 const HomeWindow = () => (
   <div className={styling.homepagebackground}>

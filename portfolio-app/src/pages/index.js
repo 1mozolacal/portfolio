@@ -1,29 +1,80 @@
 import React from "react"
-import { Link } from "gatsby"
-
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
-
-//import "bootstrap/dist/css/bootstrap.min.css"
+import NavBar from "../components/navBar"
+import ContentWindow from "../components/contentWindow"
+import styles from "../style/componentStyles.module.sass"
 import "../style/custom.sass"
 import "../style/global.css"
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-    <button style={{ gradient: "aqua" }} class="btn aqua-gradient calvin-aqua">
-      Aqua
-    </button>
-  </Layout>
-)
+class HomePage extends React.Component {
+  constructor() {
+    super()
+    this.linkSelected = "Projects"
+    this.state = {
+      linkSelected: "Home",
+    }
+    this.upDateSelected = this.upDateSelected.bind(this)
+  }
 
-export default IndexPage
+  upDateSelected(redirect) {
+    console.log(redirect)
+    var linkSelected = this.state.linkSelected
+    switch (redirect) {
+      case "Home":
+        linkSelected = "Home"
+        break
+      case "Projects":
+        linkSelected = "Projects"
+        break
+      case "Experience":
+        linkSelected = "Experience"
+        break
+      case "Extra Curricular":
+        linkSelected = "Extra Curricular"
+        break
+      default:
+        break
+    } //end switch
+    this.setState({ linkSelected: linkSelected })
+  }
+
+  render() {
+    return (
+      <div
+        className={"nobuffer flexbox container " + styles.fillpar}
+        style={{ width: "100%", maxWidth: "100%" }}
+      >
+        <div
+          className={"nobuffer container"}
+          style={{ flex: 1, width: "100%", maxWidth: "100%" }}
+        >
+          <div
+            className={"nobuffer row " + styles.fillpar}
+            style={{ maxWidth: "100%" }}
+          >
+            <div
+              className={
+                styles.mobileshrink + " nobuffer col-md-3 primary-background"
+              }
+            >
+              <NavBar
+                select={this.state.linkSelected}
+                linkHandler={this.upDateSelected}
+              ></NavBar>
+            </div>
+            <div
+              className={
+                styles.mobileshrink +
+                " nobuffer col-md-9 primary-background " +
+                styles.fillpar
+              }
+            >
+              <ContentWindow window={this.state.linkSelected}></ContentWindow>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  }
+}
+
+export default HomePage

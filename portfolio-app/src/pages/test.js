@@ -4,7 +4,7 @@ import React from "react"
 //import Banner from "../components/banner"
 import NavBar from "../components/navBar"
 import SandGround from "../components/testCom"
-import styles from "../style/componentStyles.module.css"
+import styles from "../style/componentStyles.module.sass"
 
 const PageTop = () => (
   <div
