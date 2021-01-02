@@ -19,7 +19,7 @@ const ProjectWindow = () => (
     >
       <AnimatedCard
         title="Gen Flight"
-        description="Neutral Networks that a genetically trained to control virtural triangle airplanes"
+        description="Neutral Networks that a genetically trained to control simulated triangle airplanes"
         name="Card"
         git="https://github.com/1mozolacal/GenFlight"
         link="projects/gen-flight"
@@ -30,7 +30,8 @@ const ProjectWindow = () => (
         title="Data Science Challenge"
         description="Challenge from Salon everywhere for there data science and machine learning position"
         link="projects/saloneverywhere"
-        icon="https://media-exp1.licdn.com/dms/image/C560BAQEXWPx26hjweQ/company-logo_200_200/0/1607190192837?e=1616630400&v=beta&t=fXjK7cacsLKdfqFKYu_f2U9H-5RPSSY46Rc5Ef9bNLg"
+        // icon="https://media-exp1.licdn.com/dms/image/C560BAQEXWPx26hjweQ/company-logo_200_200/0/1607190192837?e=1616630400&v=beta&t=fXjK7cacsLKdfqFKYu_f2U9H-5RPSSY46Rc5Ef9bNLg"
+        icon="https://www.vippng.com/png/detail/225-2256606_hair-salon-haircuts-icon-emblem.png"
         git="https://github.com/1mozolacal/DataScienceChallengeSaloneverywhere"
       ></AnimatedCard>
       <AnimatedCard
@@ -44,21 +45,21 @@ const ProjectWindow = () => (
       <AnimatedCard
         name="Card4"
         title="Shifter Module"
-        description="Code for MKR2000 that controling gear shifting of FSAE formula car"
+        description="Code for MKR1000 that controlled gear shifting of an FSAE formula car"
         git="https://github.com/1mozolacal/ShifterModule"
         icon="https://images.squarespace-cdn.com/content/v1/55e1e259e4b097fe3a3a691e/1597439467075-JFVGYUV50BGHRKMVB9GV/ke17ZwdGBToddI8pDm48kCpX2mwG9slVUzQCwhOMrQF7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UVDXM9yQ8sG6x3COIEUaadqpk9XPubC0H4MH9Az_c7nPqIjSxZ2rgD2_Fw9U6DWfsg/DSC_1491-Edit.jpg?format=500w"
       ></AnimatedCard>
       <AnimatedCard
         name="Card5"
         title="StarCraft2 AI"
-        description="Just started"
+        description="Use python-sc2 library to interface with StarCraft; a real-time strategy game. The goal is to create a bot that will be controlled via CNN that takes the battlefield as input that is able to beat me at the game. Currently a work in progress and only able to beat the built-in hard computer."
         git="https://github.com/1mozolacal/StarCraftAI.git"
         icon="https://www.sapphirenation.net/-/media/sites/sapphirenation/articles/2018/01/IMG_01-1-1024x576.jpg"
       ></AnimatedCard>
       <AnimatedCard
         name="Card6"
         title="FIRST Robotics"
-        description="My experience with FIRST Robtics"
+        description="My experience with FIRST Robtics, from member to mentor."
         link="projects/first"
         icon="https://www.firstinspires.org/sites/default/files/uploads/resource_library/brand/thumbnails/FIRST-V.png"
       ></AnimatedCard>
@@ -76,6 +77,7 @@ class AnimatedCard extends React.Component {
     this.readMoreLink = props.link
     this.handleMouse = this.handleMouse.bind(this)
     this.handleMouseOff = this.handleMouseOff.bind(this)
+    this.redirectOnClick = this.redirectOnClick.bind(this)
     this.ele = React.createRef()
     this.perspective = "100em"
     this.maxRot = 25
@@ -146,6 +148,12 @@ class AnimatedCard extends React.Component {
     }
   }
 
+  redirectOnClick() {
+    if (this.readMoreLink) {
+      window.location.href = this.readMoreLink
+    }
+  }
+
   render() {
     return (
       <div
@@ -158,6 +166,7 @@ class AnimatedCard extends React.Component {
           justifyContent: "space-between",
         }}
         id={this.id}
+        onClick={this.redirectOnClick}
       >
         <div>
           <h1 style={{ textAlign: "center" }}>{this.title}</h1>
@@ -166,10 +175,19 @@ class AnimatedCard extends React.Component {
           )}
           <div className={StylingProject.summaryHolder}>{this.description}</div>
         </div>
-        <div className="btn-group" style={{ height: "10%" }}>
-          {this.gitLink && <GitButton link={this.gitLink}></GitButton>}
+        <div className="btn-group">
+          {this.gitLink && (
+            <div className="btn">
+              <GitButton
+                style={{ height: "4em", width: "4em" }}
+                link={this.gitLink}
+              ></GitButton>
+            </div>
+          )}
           {this.readMoreLink && (
-            <MoreButton link={this.readMoreLink}></MoreButton>
+            <div className="btn">
+              <MoreButton link={this.readMoreLink}></MoreButton>
+            </div>
           )}
         </div>
       </div>

@@ -121,22 +121,22 @@ const AccordionSkills = props => {
       <GenerateSkillCard
         header="Languages"
         items={{
-          Python: "7/10",
+          Python: "8/10",
           Java: "5/10",
-          JavaScript: "3/10",
+          JavaScript: "5/10",
           LabVIEW: "3/10",
-          C: "3/10",
-          SQL: "2/10",
-          "HTML/CSS": "",
+          C: "4/10",
+          SQL: "4/10",
+          "HTML/CSS": "4/10",
         }}
       ></GenerateSkillCard>
       <GenerateSkillCard
         header="Frameworks"
-        items={{ Django: "5/10", React: "3/10", Gatsby: "1/10" }}
+        items={{ Django: "6/10", React: "4/10", Gatsby: "2/10" }}
       ></GenerateSkillCard>
       <GenerateSkillCard
         header="Dev Ops tools"
-        items={{ Git: "8/10", Docker: "3/10", Agile: "1/10" }}
+        items={{ Git: "7/10", Docker: "3/10", Agile: "5/10" }}
       ></GenerateSkillCard>
 
       <GenerateSkillCard
@@ -154,19 +154,19 @@ const AccordionSkills = props => {
           "Code to Win": "60-70 out of 1000+",
           "Hack the North": "",
           "Hack the Valley": "",
-          "Ontario skills - robotics and control systems": "gold",
-          "Halton skills - robotics and control systems": "gold",
+          "Ontario skills - robotics and control systems": "Gold",
+          "Halton skills - robotics and control systems": "Gold",
         }}
       ></GenerateSkillCard>
       <GenerateSkillCard
         header="Concepts"
         items={{
-          CCP: "5/10",
-          Robotics: "3/10",
-          "PID Conrollers": "1/10",
-          "Data Structures": "",
-          "Computer Vision": "",
-          Algorithms: "",
+          OOP: "8/10",
+          Robotics: "5/10",
+          "PID Conrollers": "2/10",
+          "Data Structures": "6/10",
+          "Computer Vision": "3/10",
+          Algorithms: "6/10",
         }}
       ></GenerateSkillCard>
     </Accordion>

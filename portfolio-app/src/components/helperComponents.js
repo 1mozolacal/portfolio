@@ -13,6 +13,7 @@ class GitButton extends React.Component {
       this.icon = gitIcon
     }
     this.styling = props.className
+    this.style = props.style
   }
   render() {
     return (
@@ -20,7 +21,7 @@ class GitButton extends React.Component {
         <img
           alt="Github Logo"
           className={this.styling}
-          style={{ maxHeight: "100%" }}
+          style={this.style}
           src={this.icon}
         ></img>
       </a>

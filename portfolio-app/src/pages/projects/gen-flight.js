@@ -14,7 +14,19 @@ const GenPage = () => {
   const mainText = [
     [
       "Summary",
-      "The basic idea of the project is to use a neural network to control an 'air plane'(by air plane I am refereing to a 2D trigangle, the air plane simulation is not the main focus of this project). I am using it's position, speed and slight as inputs... INPUT LAYER -x position coordinate -y position coordinate -x speed velocity -y speed velocity -First slight line . . . -N slight line Originally I had two hidden layers but led to overfitting and the planes where memorizing the path and not learning intellegent behavious. It currently has no hidden layers. OUTPUT LAYER -forward -left -right -back -coast",
+      "The basic idea of the project is to use a neural network to control an 'airplane' which is represented by a triangle. The Planes sight is feed into the network and the output determines which action it will perform.",
+    ],
+    [
+      "Network",
+      "I decided on a shallow network without hidden layers. The program has the capability to have up to 2 hidden layers (reference the gallery to see a network with 0 and 2 hidden layers) but I found that I was running into issues of overfitting with hidden layers so I removed them. The values in the network, both connection values and node values, are normalized and remain between -1 and 1. The normalization is done with the arctan function.\nINPUT\nx position coordinate \ny position coordinate \nx speed velocity \ny speed velocity \nN amount of sightlines.\nThe sightlines are a representation of the nearest object from the plan for a given angle. See that gallery for sightlines depiction.\nOUTPUT\nUp\nDown\nLeft\nRight\nCoast",
+    ],
+    [
+      "Map",
+      "This is not only one map it just that the ‘funnel’ map that is shown in the gallery is the best map that I made for training the planes. Maps are created using the map editor and are saved as a text file which has to be properly referenced in the main code to be used.",
+    ],
+    [
+      "Results",
+      "The goal of this project was to teach planes how to navigate a given course and more importantly learn about the basics of what a neural network is. The planes were able to learn basic obstacle avoidance behaviors but unable to fly collision-free. I hoped to get more impressive results than this but I did learn a lot about neural networks considering that I created the networks from scratch.",
     ],
   ]
   const pic1Ref = useRef(pic1)

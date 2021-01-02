@@ -4,7 +4,6 @@ import styling from "../style/projectPage.module.sass"
 import { GitButton, GalleryButton } from "./helperComponents.js"
 
 const GenericProject = props => {
-  const testRef = useRef("test")
   return (
     <div>
       <div className={styling.bannerContainer}>
