@@ -16,7 +16,7 @@ const HomeWindow = () => (
       <h1>
         <b style={{ frontSize: "200%" }}>Hello!</b>
         <small className="w-25">
-          I am a Computer Science student in Ryerson who is interest in web
+          I am a Computer Science student at Ryerson who is interested in web
           development, robotics, and ML
         </small>
       </h1>

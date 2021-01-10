@@ -163,7 +163,7 @@ const AccordionSkills = props => {
         items={{
           OOP: "8/10",
           Robotics: "5/10",
-          "PID Conrollers": "2/10",
+          "PID Controllers": "2/10",
           "Data Structures": "6/10",
           "Computer Vision": "3/10",
           Algorithms: "6/10",
