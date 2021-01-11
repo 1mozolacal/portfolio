@@ -4,14 +4,9 @@ import styling from "../style/componentStyles.module.sass"
 const ExperienceWindow = () => (
   <div className={styling.homepagebackground + " " + styling.hidescroll}>
     <div
-      className="justify-content-center align-items-center"
-      style={{
-        color: "black",
-        position: "relative",
-        left: "20%",
-        top: "20%",
-        width: "60%",
-      }}
+      className={
+        "justify-content-center align-items-center " + styling.workwrapper
+      }
     >
       <h1>Technical Experience</h1>
       <div className={styling.workFrame + " " + styling.airplanebg}>

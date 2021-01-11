@@ -3,19 +3,42 @@ import HomeWindow from "./HomeWindow"
 import ProjectWindow from "./projectWindow"
 import ExperienceWindow from "./experienceWindow"
 
+import styles from "../style/componentStyles.module.sass"
+
 const ContentWindow = props => {
   const window = props.window
-  console.log("rendering with:" + props.window)
+  console.log("changing to " + window)
+  var htmlWindow = null
   switch (window) {
     case "Home":
-      return <HomeWindow></HomeWindow>
+      htmlWindow = <HomeWindow></HomeWindow>
+      break
     case "Projects":
-      return <ProjectWindow></ProjectWindow>
+      htmlWindow = <ProjectWindow></ProjectWindow>
+      break
     case "Experience":
-      return <ExperienceWindow></ExperienceWindow>
+      htmlWindow = <ExperienceWindow></ExperienceWindow>
+      break
     default:
-      return <HomeWindow></HomeWindow>
+      htmlWindow = <HomeWindow></HomeWindow>
+      break
   } //end switch
+  if (props.navBarCallBack) {
+    return (
+      <div>
+        {htmlWindow}
+        <div
+          className={styles.navhidebutton}
+          onClick={() => props.navBarCallBack(true)}
+          style={{ left: 0 }}
+        >
+          ↦
+        </div>
+      </div>
+    )
+  } else {
+    return htmlWindow
+  }
 }
 
 export default ContentWindow

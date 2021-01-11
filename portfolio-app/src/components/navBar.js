@@ -1,5 +1,6 @@
 import React from "react"
 import { Card, Button } from "react-bootstrap"
+import { BrowserView } from "react-device-detect"
 import Accordion from "react-bootstrap/Accordion"
 import Styling from "../style/componentStyles.module.sass"
 //import PropTypes from "prop-types"
@@ -10,9 +11,20 @@ const NavBar = props => (
       select={props.select}
       linkHandler={props.linkHandler}
     ></LinkNavBar>
-    <AccordionSkills style={{ margin: "15px" }}></AccordionSkills>
+    <BrowserView>
+      <AccordionSkills style={{ margin: "15px" }}></AccordionSkills>
+    </BrowserView>
+    <HideButton onClick={props.navBarCallBack}></HideButton>
   </div>
 )
+
+const HideButton = props => {
+  return (
+    <div onClick={() => props.onClick(false)} className={Styling.navhidebutton}>
+      ←
+    </div>
+  )
+}
 
 const LinkNavBar = props => {
   var selection = readOffProps(props.select, "Home")
